@@ -1,0 +1,56 @@
+@use 'styles' as *;
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: $neutral-900;
+  font-weight: 600;
+}
+
+input {
+  margin-top: 8px;
+  height: 54px;
+  font-family: inherit;
+  padding: 16px;
+  border: 1px solid $neutral-900;
+  border-radius: $radius-6;
+
+  @include text-preset(4-semibold);
+
+  &:focus {
+    outline: none;
+    border-color: $blue-600;
+  }
+
+  &:focus:hover {
+    box-shadow: 4px 4px 0 -2px $blue-600;
+  }
+
+  &:hover {
+    box-shadow: 4px 4px 0 -2px $neutral-900;
+  }
+
+  /* Use aria-invalid on the input for the error state (accessible pattern) */
+  &[aria-invalid="true"] {
+    box-shadow: 4px 4px 0 -2px $pink-700;
+    border-color: $pink-700;
+  }
+}
+
+input::placeholder {
+  color: $neutral-600;
+}
+
+.error-message {
+  color: $pink-700;
+  margin-top: $spacing-100;
+  @include text-preset(5-regular);
+}
+
+.error {
+  display: flex;
+  gap: 6px;
+}

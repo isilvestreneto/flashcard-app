@@ -1,1 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
+// NEUTRAL
+$neutral-900: #2E1401;
+$neutral-600: #6D5B4D;
+$neutral-100: #F7F3F0;
+$neutral-0: #FFF;
+
+// ACCENT COLORS
+$yellow-500: #F8CB46;
+$blue-400: #92ADEB;
+$blue-600: #5072C7;
+$teal-400: #47D9C9;
+$pink-400: #FC8AE5;
+$pink-500: #F073A3;
+$pink-700: #E11966;
+
+
+// Font Sizes
+$font-size-xlarge: 40px;
+$font-size-large: 32px;
+$font-size-medium: 24px;
+$font-size-regular: 20px;
+$font-size-small: 16px;
+$font-size-xsmall: 14px;
+$font-size-xxsmall: 12px;
+
+// Letter Spacing
+$letter-spacing-normal: 0;
+$letter-spacing-small: -3%;
+
+// Line Heights
+$line-height-regular: 120%;
+$line-height-medium: 130%;
+$line-height-large: 140%;
+
+// Border radius
+$radius-6: 6px;
+
+// Spacing
+$spacing-100: 8px;
+
+
+// Register Poppins font files placed under public/assets/fonts/Poppins
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$font-family-base: "Poppins", sans-serif;
+
+body {
+  font-family: $font-family-base;
+  background-color: $neutral-0;
+  color: $neutral-900;
+}
+
+$text-presets: (
+  4-semibold: (
+    font-size: 16px,
+    line-height: $line-height-regular, // equivalente a 120%
+    letter-spacing: 0,
+    font-weight: 400
+  ),
+  5-regular: (
+    font-size: 14px,
+    line-height: $line-height-large,
+    letter-spacing: 0
+  )
+);
+
+// Mixin que aplica um preset
+@mixin text-preset($key) {
+  $preset: map-get($text-presets, $key);
+
+  @if $preset == null {
+    @error "Text preset '#{$key}' não existe. Disponíveis: #{map-keys($text-presets)}";
+  }
+
+  font-size: map-get($preset, font-size);
+  line-height: map-get($preset, line-height);
+  letter-spacing: map-get($preset, letter-spacing);
+  font-weight: map-get($preset, font-weight);
+}
