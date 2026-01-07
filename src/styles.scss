@@ -114,3 +114,8 @@ $text-presets: (
   letter-spacing: map-get($preset, letter-spacing);
   font-weight: map-get($preset, font-weight);
 }
+
+label {
+  color: $neutral-900;
+  font-weight: 600;
+}

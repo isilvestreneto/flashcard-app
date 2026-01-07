@@ -1,5 +1,15 @@
 @use 'styles' as *;
 
-body {
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.background-color {
   background-color: $neutral-100;
+}
+
+.spacing {
+  padding: 20px;
 }

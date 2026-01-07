@@ -1,16 +1,24 @@
 import {Component, signal} from '@angular/core';
-import {InputComponent} from './components/input/input';
+// import {InputComponent} from './components/input/input';
+import {Textarea} from './components/textarea/textarea';
 
 @Component({
   selector: 'app-root',
   imports: [
-    InputComponent
+    // InputComponent,
+    Textarea
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('flashcard-app');
-  protected question = signal('Question');
-  placeholder = signal('e.g., What is the capital of France?');
+  // Properties for Input component
+  // protected readonly title = signal('flashcard-app');
+  // protected question = signal('Question');
+  // placeholder = signal('e.g., What is the capital of France?');
+
+  // Properties for Textarea component
+  // protected title = signal('Title');
+  // protected placeholder = signal('Placeholder text');
+  // error = signal(false);
 }
