@@ -1,0 +1,63 @@
+@use 'styles' as *;
+
+button {
+  //height: 43px;
+  @include text-preset(4-medium);
+  border: 1px solid $neutral-900;
+  border-radius: 999px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 12px 20px;
+  font-family: $font-family-base;
+
+  white-space: nowrap;
+
+  // Apenas quando o botão for .primary ou .secondary
+  &.primary,
+  &.secondary {
+    box-shadow: 3px 4px 0 -2px $neutral-900;
+
+    &:hover {
+      box-shadow: 5px 5px 0 -2px $neutral-900;
+      cursor: pointer;
+    }
+
+    &:focus {
+      box-shadow: 5px 5px 0 -2px $blue-600;
+    }
+
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus {
+      box-shadow: none;
+      opacity: .5;
+      border: 2px solid $neutral-900;
+      cursor: not-allowed;
+    }
+  }
+
+}
+
+.primary {
+  background-color: $yellow-500;
+  //width: 153px;
+}
+
+.secondary {
+  background-color: $neutral-0;
+}
+
+.border {
+  background-color: $neutral-0;
+
+  &:hover {
+    background-color: $neutral-100;
+  }
+
+  &:focus {
+    box-shadow:
+      0 0 0 2px $neutral-0,
+      0 0 0 4px $blue-600;
+  }
+}

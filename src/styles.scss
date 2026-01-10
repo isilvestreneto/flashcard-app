@@ -88,6 +88,12 @@ body {
 }
 
 $text-presets: (
+  4-medium: (
+    font-size: 16px,
+    line-height: $line-height-regular, // equivalente a 120%
+    letter-spacing: 0,
+    font-weight: 500
+  ),
   4-semibold: (
     font-size: 16px,
     line-height: $line-height-regular, // equivalente a 120%
