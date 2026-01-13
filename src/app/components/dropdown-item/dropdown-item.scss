@@ -1,0 +1,26 @@
+@use 'styles' as *;
+
+.dropdown-item {
+  width: 140px;
+  height: 36px;
+  all: unset;              // remove TUDO do button
+  box-sizing: border-box;  // volta comportamento esperado
+  background-color: $neutral-0;
+  padding: 10px 16px;
+  display: flex;
+  gap: 8px;
+
+  &:hover {
+    background-color: $neutral-100;
+  }
+
+  &:focus {
+    outline: 1px solid $blue-400;
+  }
+
+  p {
+    @include text-preset(5);
+    color: $neutral-900;
+    margin: 0;
+  }
+}

@@ -105,6 +105,11 @@ $text-presets: (
     font-size: 14px,
     line-height: $line-height-large,
     letter-spacing: 0
+  ),
+  5:(
+    font-size: 14px,
+    line-height: $line-height-large, // equivalente a 140%
+    letter-spacing: 0,
   )
 );
 
@@ -129,9 +134,8 @@ $text-presets: (
   $outer-size: 4px
 ) {
   &:focus {
-    box-shadow:
-      0 0 0 $inner-size $inner-color,
-      0 0 0 $outer-size $outer-color;
+    box-shadow: 0 0 0 $inner-size $inner-color,
+    0 0 0 $outer-size $outer-color;
   }
 }
 
