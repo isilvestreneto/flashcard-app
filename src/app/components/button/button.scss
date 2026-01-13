@@ -1,4 +1,5 @@
 @use 'styles' as *;
+@use 'styles/focus' as focus;
 
 button {
   //height: 43px;
@@ -55,9 +56,5 @@ button {
     background-color: $neutral-100;
   }
 
-  &:focus {
-    box-shadow:
-      0 0 0 2px $neutral-0,
-      0 0 0 4px $blue-600;
-  }
+  @include focus.focus-outline($neutral-0, $blue-600);
 }

@@ -1,0 +1,12 @@
+@mixin focus-outline(
+  $inner-color,
+  $outer-color,
+  $inner-size: 2px,
+  $outer-size: 4px
+) {
+  &:focus {
+    box-shadow:
+      0 0 0 $inner-size $inner-color,
+      0 0 0 $outer-size $outer-color;
+  }
+}

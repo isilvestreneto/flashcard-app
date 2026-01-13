@@ -1,0 +1,40 @@
+@use 'styles' as *;
+@use 'styles/focus' as focus;
+
+input {
+  &[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid $neutral-900;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    background-color: $neutral-0;
+    //transition: background-color 0.2s, border-color 0.2s;
+
+    &:checked {
+      background-color: $yellow-500;
+
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml;utf8,\
+<svg fill='none' height='7' viewBox='0 0 9 7' width='9' xmlns='http://www.w3.org/2000/svg'>\
+<path d='m7.98828.0976562c.09766-.0976562.25391-.0976562.33203 0l.56641.5468748c.07812.097657.07812.253907 0 .332031l-5.85938 5.859378c-.09765.09765-.23437.09765-.33203 0l-2.617185-2.59766c-.078125-.09766-.078125-.2539 0-.33203l.566406-.56641c.078125-.07812.234375-.07812.332031 0l1.874998 1.89454z' fill='%232e1401'/>\
+</svg>");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 10px 10px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 1.5px 1px 0 0 $neutral-900;
+    }
+
+    @include focus.focus-outline($neutral-0, $blue-600);
+
+  }
+}

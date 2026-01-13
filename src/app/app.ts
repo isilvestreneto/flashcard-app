@@ -2,13 +2,15 @@ import {Component, signal} from '@angular/core';
 // import {InputComponent} from './components/input/input';
 import {Textarea} from './components/textarea/textarea';
 import {Button} from './components/button/button';
+import {Checkbox} from './components/checkbox/checkbox';
 
 @Component({
   selector: 'app-root',
   imports: [
     // InputComponent,
     // Textarea,
-    Button
+    // Button,
+    // Checkbox
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
