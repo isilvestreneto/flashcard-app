@@ -1,0 +1,22 @@
+@use 'styles' as *;
+
+.progress {
+  width: 60px;
+  height: 8px;
+  background-color: $neutral-0;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid $neutral-900;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: $neutral-900;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Mapeamento dos níveis */
+.progress-bar {
+  width: calc(var(--level) * 20%);
+}

@@ -1,9 +1,10 @@
-import {Component, signal} from '@angular/core';
+import {Component, signal, WritableSignal} from '@angular/core';
 // import {InputComponent} from './components/input/input';
 import {Textarea} from './components/textarea/textarea';
 import {Button} from './components/button/button';
 import {Checkbox} from './components/checkbox/checkbox';
 import {DropdownItem} from './components/dropdown-item/dropdown-item';
+import {ProgressBar} from './components/progress-bar/progress-bar';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import {DropdownItem} from './components/dropdown-item/dropdown-item';
     // Textarea,
     // Button,
     // Checkbox,
-    DropdownItem
+    // DropdownItem,
+    ProgressBar
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -27,4 +29,5 @@ export class App {
   // protected title = signal('Title');
   // protected placeholder = signal('Placeholder text');
   // error = signal(false);
+  protected level: WritableSignal<number> = signal(1);
 }
