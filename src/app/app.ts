@@ -5,6 +5,7 @@ import {Button} from './components/button/button';
 import {Checkbox} from './components/checkbox/checkbox';
 import {DropdownItem} from './components/dropdown-item/dropdown-item';
 import {ProgressBar} from './components/progress-bar/progress-bar';
+import {Logo} from './components/logo/logo';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ import {ProgressBar} from './components/progress-bar/progress-bar';
     // Button,
     // Checkbox,
     // DropdownItem,
-    ProgressBar
+    // ProgressBar,
+    Logo
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

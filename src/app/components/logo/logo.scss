@@ -1,0 +1,16 @@
+.icon--tablet-or-desktop {
+  display: inline-block;
+}
+
+.icon--mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .icon--tablet-or-desktop {
+    display: none;
+  }
+  .icon--mobile {
+    display: inline-block;
+  }
+}
