@@ -6,17 +6,19 @@ import {Checkbox} from './components/checkbox/checkbox';
 import {DropdownItem} from './components/dropdown-item/dropdown-item';
 import {ProgressBar} from './components/progress-bar/progress-bar';
 import {Logo} from './components/logo/logo';
+import {TabComponent} from './components/tab-component/tab-component';
 
 @Component({
   selector: 'app-root',
   imports: [
+    TabComponent,
     // InputComponent,
     // Textarea,
     // Button,
     // Checkbox,
     // DropdownItem,
     // ProgressBar,
-    Logo
+    // Logo
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
