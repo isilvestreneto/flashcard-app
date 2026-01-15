@@ -1,25 +1,38 @@
 import { Component } from '@angular/core';
 
+type TabKey = 'study-mode' | 'all-cards';
+
 @Component({
   selector: 'app-tab-component',
   imports: [],
   styleUrl: './tab-component.scss',
   template: `
-    <div class="tab-component">
-      <button class="yellow-state" [attr.aria-pressed]="selected === 'study-mode'" (click)="studyModeButtonClick()">Study Mode</button>
-      <button class="white-state" (click)="allCardsButtonClick()" [attr.aria-pressed]="selected === 'all-cards'">All Cards</button>
+    <div class="tab-component" role="group" aria-label="Card mode">
+      <button
+        type="button"
+        class="tab-button"
+        [attr.aria-pressed]="selected === 'study-mode'"
+        (click)="select('study-mode')"
+      >
+        Study Mode
+      </button>
+
+      <button
+        type="button"
+        class="tab-button"
+        [attr.aria-pressed]="selected === 'all-cards'"
+        (click)="select('all-cards')"
+      >
+        All Cards
+      </button>
     </div>
   `
 })
 export class TabComponent {
 
-  selected : 'study-mode' | 'all-cards' = 'study-mode';
+  selected: TabKey = 'study-mode';
 
-  protected studyModeButtonClick() {
-    this.selected = 'study-mode';
-  }
-
-  protected allCardsButtonClick() {
-    this.selected = 'all-cards';
+  protected select(tab: TabKey) {
+    this.selected = tab;
   }
 }

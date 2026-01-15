@@ -131,12 +131,14 @@ $text-presets: (
   $inner-color,
   $outer-color,
   $inner-size: 2px,
-  $outer-size: 4px
+  $outer-size: 4px,
+  $mode: null // null | inset
 ) {
-  &:focus {
-    box-shadow: 0 0 0 $inner-size $inner-color,
-    0 0 0 $outer-size $outer-color;
-  }
+  $inset: if($mode == inset, inset, null);
+
+  box-shadow:
+    #{$inset} 0 0 0 $inner-size $inner-color,
+    #{$inset} 0 0 0 $outer-size $outer-color;
 }
 
 label {
